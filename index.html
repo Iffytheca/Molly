@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>MOLLY</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<canvas id="c"></canvas>
+<div id="vignette"></div>
+<div id="glow"></div>
+<div id="grain"></div>
+<div id="flash"></div>
+
+<div id="hud">
+  <div id="objective"></div>
+  <div id="inventory"></div>
+  <div id="crosshair"></div>
+  <div id="prompt"></div>
+  <div id="subtitle"></div>
+  <div id="hintbox"></div>
+  <div id="toast"></div>
+  <div id="helpbar"><button id="btn-hint" title="Hint (H)">H &nbsp;Hint</button><button id="btn-mute" title="Mute (M)">M &nbsp;Sound</button><span>Esc &nbsp;Pause</span></div>
+  <div id="secrets" class="hidden" title="Secrets you have found (golden buttons)"></div>
+  <div id="dbg" class="hidden"></div>
+</div>
+
+<div id="silly" class="hidden"><div class="sbub">BONK!</div><div class="swrap"><img id="silly-img" alt=""><svg class="shat" viewBox="0 0 100 60"><path d="M8 52 Q10 8 50 6 Q90 8 92 52 Z" fill="#fff" stroke="#bbb" stroke-width="2"/><rect x="44" y="16" width="12" height="30" fill="#e53935"/><rect x="35" y="25" width="30" height="12" fill="#e53935"/></svg></div></div>
+
+<div id="bigtext"></div>
+<div id="panelroot" class="hidden"></div>
+<div id="fade"></div>
+
+<div id="title" class="screen">
+  <div class="title-left">
+    <h1>MOLLY</h1>
+    <p class="tag">She just wants a friend...</p>
+    <div class="btns">
+      <button id="btn-start" class="big">Start</button>
+      <button id="btn-continue" class="big alt hidden">Continue</button>
+    </div>
+    <div class="controls">
+      <h3>Controls</h3>
+      <ul>
+        <li><b>W A S D</b> or <b>Arrow keys</b> &nbsp;walk &nbsp;(hold <b>Shift</b> to hurry)</li>
+        <li><b>Mouse</b> &nbsp;look around &nbsp;(click the game to start)</li>
+        <li><b>E</b> or <b>Click</b> &nbsp;pick up / use things</li>
+        <li><b>H</b> &nbsp;get a hint &nbsp;&middot;&nbsp; <b>M</b> &nbsp;sound on/off &nbsp;&middot;&nbsp; <b>Esc</b> &nbsp;pause</li>
+        <li>Piano: click the keys or press <b>1</b> to <b>7</b></li>
+      </ul>
+      <p class="small">Tip: if Molly is close, keep your eyes on her. She only moves when you are not looking.</p>
+    </div>
+  </div>
+  <div class="polaroid"><img src="img/molly.png" alt="Molly"><span>Molly</span></div>
+</div>
+
+<div id="pause" class="screen hidden">
+  <div class="box">
+    <h2>Paused</h2>
+    <p>Click anywhere to keep playing.</p>
+    <button id="btn-pause-title" class="alt">Back to title</button>
+  </div>
+</div>
+
+<div id="caught" class="screen hidden">
+  <div class="box">
+    <h2>Molly got you!</h2>
+    <p>Don't give up, Emily. Keep your eyes on her and try again.</p>
+    <button id="btn-retry" class="big">Try again</button>
+    <button id="btn-title" class="alt">Title screen</button>
+  </div>
+</div>
+
+<div id="endcard" class="screen hidden">
+  <div class="box">
+    <h2>To be continued...</h2>
+    <p class="credit">Made by Alizay</p>
+    <p id="endsecrets" class="small"></p>
+    <p id="endbonus" class="hidden"></p>
+    <button id="btn-again" class="big alt">Back to title</button>
+  </div>
+</div>
+
+<div id="fatal" class="screen hidden"><div class="box"><h2>Oh no!</h2><p>Your browser could not start 3D graphics (WebGL). Try Chrome, and make sure hardware acceleration is turned on.</p></div></div>
+
+<script src="three.min.js"></script>
+<script src="audio.js"></script>
+<script src="img/textures.js"></script>
+<script src="img/sprites.js"></script>
+<script src="build.js"></script>
+<script src="realistic.js"></script>
+<script src="models.js"></script>
+<script src="game.js"></script>
+<script src="dread.js"></script>
+<script src="secrets.js"></script>
+<script src="levels/intro.js"></script>
+<script src="levels/level1.js"></script>
+<script src="levels/level2.js"></script>
+<script src="levels/level3.js"></script>
+<script src="levels/level4.js"></script>
+<script src="levels/ending.js"></script>
+</body>
+</html>
